@@ -11,6 +11,15 @@
         update_cache: yes
       notify: Restart nginx
 
+    - name: Disable Sendfile
+      lineinfile: 
+        dest: '/etc/nginx/nginx.conf'
+        regexp: '^\s*sendfile'
+        line: 'sendfile off;'
+        state: present
+      notify:
+        - Restart nginx
+
     - name: Create symlinks to nginx document root
       file:
         src: '/jumeaux'
