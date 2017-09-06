@@ -3,7 +3,8 @@ jumeaux-toolbox
 
 ## System structure
 
-Todo
+.. image:: https://cacoo.com/diagrams/lhxa5WXGey4z5MMD-89A6C.png
+    :target: https://cacoo.com/diagrams/lhxa5WXGey4z5MMD#89A6C
 
 
 ## Requirements
