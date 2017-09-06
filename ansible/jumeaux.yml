@@ -10,8 +10,8 @@
       shell: '. ~/.bash_profile && pyenv install {{ version.python3 }}'
       when: not python_is_installed.stat.exists
 
-    - name: Install Jumeaux from pip
-      shell: '. ~/.bash_profile && pyenv global {{ version.python3 }} && pip install jumeaux'
+    - name: Install Jumeaux {{version.jumeaux}} from pip
+      shell: '. ~/.bash_profile && pyenv global {{ version.python3 }} && pip install jumeaux=={{ version.jumeaux }}'
 
     - name: Create .aws directory
       file:
