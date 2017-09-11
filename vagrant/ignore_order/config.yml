@@ -1,12 +1,12 @@
-title: Simple
+title: Ignore order
 
 one:
   name: One endpoint
-  host: http://localhost/api/simple/one
+  host: http://localhost/api/ignore_order/one
 
 other:
   name: Other endpoint
-  host: http://localhost/api/simple/other
+  host: http://localhost/api/ignore_order/other
 
 
 output:
@@ -29,9 +29,23 @@ output:
 
 addons:
   log2reqs:
-    name: jumeaux.addons.log2reqs.plain
+    name: jumeaux.addons.log2reqs.csv
     config:
       encoding: utf8
+
+  res2res:
+    - name: jumeaux.addons.res2res.json_sort
+      config:
+        items:
+          - conditions:
+              - path:
+                  items:
+                    - regexp: /M-.+
+            targets:
+              - path: root<'list1'><0><'favorite'>
+
+  res2dict:
+    - name: jumeaux.addons.res2dict.json
 
   store_criterion:
     - name: jumeaux.addons.store_criterion.general
