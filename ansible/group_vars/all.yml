@@ -1,6 +1,6 @@
 timezone: Asia/Tokyo
 version:
   python3: '3.6.2'
-  jumeaux: '0.22.1'
+  jumeaux: '0.22.2'
   localstack: '0.7.3'
 
