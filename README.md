@@ -46,7 +46,14 @@ $ vagrant up --provision
 
 ## Jumeaux Viewer
 
-You can access to http://localhost:8888.
+You can access to http://localhost:8888 and login with LocalStack mode on.
+
+After login successed, you need to input configurations as following.
+
+* DynamoDB table name
+  - jumeaux-viewer
+* Bucket name
+  - mamansoft-jumeaux-viewer
 
 
 ## Jumeaux
