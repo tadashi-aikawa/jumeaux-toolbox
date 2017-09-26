@@ -1,0 +1,10 @@
+# --------------------------------------
+# Usage: 
+#  ex1: /vagrant/jumeaux simple
+#  ex2: /vagrant/jumeaux ignore_order
+#  ex3: ...
+# --------------------------------------
+
+jumeaux /vagrant/vagrant/$1/requests \
+  --config /vagrant/vagrant/common/config.yml \
+  --config /vagrant/vagrant/$1/config.yml
