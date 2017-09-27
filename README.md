@@ -62,14 +62,20 @@ You can also use jumeaux with no preparation if you are login with ssh.
 
 ```
 $ ssh ${vagrant-machine}
-
-# For one example...
-$ jumeaux --config /jumeaux/simple/config.yml /jumeaux/simple/requests
-
-# This is same as above
-$ /vagrant/jumeaux simple
 ```
 
+Execute jumeaux.
+
+```
+$ jumeaux --config /jumeaux/common/config.yml --config /jumeaux/simple/config.yml /jumeaux/simple/requests
+```
+
+Umm... too long...  
+Don't worry! You can use shorthand as following!
+
+```
+$ /vagrant/jumeaux simple
+```
 
 If you create files under `/jumeaux`, you can access them by http request like `http://localhost/api/...`.
 
