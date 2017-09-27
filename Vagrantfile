@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "williamyeh/ubuntu-trusty64-docker"
-  config.vm.box_version = "1.12.1.20160830"
+  config.vm.box = "boxcutter/ubuntu1604"
+  config.vm.box_version = "17.0907.1"
 
   # port forward
   (4567..4581).to_a.push(8888).to_a.push(80).each do |port|
@@ -13,13 +13,15 @@ Vagrant.configure("2") do |config|
 
   # provider
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "2048"
+    vb.cpus = 2 
+    vb.memory = "4096"
   end
 
   # sync
   config.vm.synced_folder "./vagrant", "/jumeaux"
 
   # provisioning
+  config.vm.provision "docker"
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "ansible/playbook.yml"
     # ansible.verbose = "-v"
