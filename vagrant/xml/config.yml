@@ -1,0 +1,16 @@
+title: xml
+
+one:
+  name: One endpoint
+  host: http://localhost/api/xml/one
+
+other:
+  name: Other endpoint
+  host: http://localhost/api/xml/other
+
+
+addons:
+  log2reqs:
+    name: jumeaux.addons.log2reqs.plain
+    config:
+      encoding: utf8
