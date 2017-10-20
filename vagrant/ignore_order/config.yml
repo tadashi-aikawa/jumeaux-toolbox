@@ -11,12 +11,12 @@ other:
 
 addons:
   log2reqs:
-    name: jumeaux.addons.log2reqs.csv
+    name: csv
     config:
       encoding: utf8
 
   res2res:
-    - name: jumeaux.addons.res2res.json_sort
+    - name: json_sort
       config:
         items:
           - conditions:

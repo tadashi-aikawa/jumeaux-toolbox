@@ -11,6 +11,7 @@ other:
 
 addons:
   log2reqs:
-    name: jumeaux.addons.log2reqs.plain
+    name: plain
     config:
       encoding: utf8
+

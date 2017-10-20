@@ -18,27 +18,27 @@ output:
 
 addons:
   res2dict:
-    - name: jumeaux.addons.res2dict.json
-    - name: jumeaux.addons.res2dict.xml
+    - name: json
+    - name: xml
 
   store_criterion:
-    - name: jumeaux.addons.store_criterion.general
+    - name: general
       config:
         statuses:
           - different
 
   did_challenge:
-    - name: jumeaux.addons.did_challenge.sleep
+    - name: sleep
       config:
         min: 0.5
         max: 0.5
 
   dump:
-    - name: jumeaux.addons.dump.json
-    - name: jumeaux.addons.dump.xml
+    - name: json
+    - name: xml
 
   final:
-    - name: jumeaux.addons.final.aws
+    - name: aws
       config:
         table: jumeaux-viewer
         bucket: mamansoft-jumeaux-viewer

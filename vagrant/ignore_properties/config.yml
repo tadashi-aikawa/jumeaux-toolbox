@@ -11,12 +11,12 @@ other:
 
 addons:
   log2reqs:
-    name: jumeaux.addons.log2reqs.csv
+    name: csv
     config:
       encoding: utf8
 
   judgement:
-    - name: jumeaux.addons.judgement.ignore_properties
+    - name: ignore_properties
       config:
         ignores:
           - title: Ignore ignored_id
