@@ -31,8 +31,8 @@ You need to be installed ...
 
 The version which I confirmed ...
 
-* Vagrant: 1.9.5
-* VirtualBox: 5.1.22 r115126
+* Vagrant: 2.0.0
+* VirtualBox: 5.1.30 r118389
 
 
 ## Setup
