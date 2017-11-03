@@ -2,7 +2,7 @@
   connection: local
   become: yes
   vars:
-    document_root: /var/www/html
+    document_root: /usr/share/nginx/html
   tasks:
     - name: Install nginx
       apt:

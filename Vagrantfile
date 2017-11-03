@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "boxcutter/ubuntu1604"
-  config.vm.box_version = "17.0907.1"
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.box_version = "20171030.0.0"
 
   # port forward
   (4567..4581).to_a.push(8888).to_a.push(80).each do |port|

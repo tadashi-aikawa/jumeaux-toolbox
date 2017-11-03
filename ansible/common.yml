@@ -14,6 +14,7 @@
       with_items:
         - vim
         - tree
+        - git
 
     - name: Download install script for pip
       get_url:
