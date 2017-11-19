@@ -34,12 +34,12 @@
         delay: 10
 
     - name: Create S3 bucket
-      command: aws --endpoint-url=http://localhost:4572 s3 mb s3://mamansoft-jumeaux-viewer/
+      command: aws --endpoint-url=http://localhost:4572 s3 mb s3://{{ miroir.bucket_name }}/
 
     - name: Create DynamoDB table
       command: |
         aws --endpoint-url=http://localhost:4569 dynamodb create-table \
-            --table-name jumeaux-viewer \
+            --table-name {{ miroir.table_name }} \
             --attribute-definitions AttributeName=hashkey,AttributeType=S \
             --key-schema AttributeName=hashkey,KeyType=HASH \
             --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1

@@ -1,6 +1,9 @@
 timezone: Asia/Tokyo
 version:
   python3: '3.6.2'
-  jumeaux: '0.25.0'
+  jumeaux: '0.26.0'
   localstack: '0.8.0'
+miroir:
+  table_name: miroir
+  bucket_name: mamansoft-miroir
 
