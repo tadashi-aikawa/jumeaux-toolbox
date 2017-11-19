@@ -38,10 +38,10 @@ addons:
     - name: xml
 
   final:
-    - name: aws
+    - name: miroir
       config:
-        table: jumeaux-viewer
-        bucket: mamansoft-jumeaux-viewer
+        table: miroir
+        bucket: mamansoft-miroir
         cache_max_age: 120
         checklist: sample
         local_stack:
