@@ -5,6 +5,7 @@
 #  ex3: ...
 # --------------------------------------
 
-jumeaux /vagrant/vagrant/$1/requests \
+jumeaux run /vagrant/vagrant/$1/requests \
   --config /vagrant/vagrant/common/config.yml \
   --config /vagrant/vagrant/$1/config.yml
+

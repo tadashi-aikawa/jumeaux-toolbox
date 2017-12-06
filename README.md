@@ -67,7 +67,7 @@ $ ssh ${vagrant-machine}
 Execute jumeaux.
 
 ```
-$ jumeaux --config /jumeaux/common/config.yml --config /jumeaux/simple/config.yml /jumeaux/simple/requests
+$ jumeaux run --config /jumeaux/common/config.yml --config /jumeaux/simple/config.yml /jumeaux/simple/requests
 ```
 
 Umm... too long...  
