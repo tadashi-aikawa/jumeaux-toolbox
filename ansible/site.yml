@@ -1,0 +1,4 @@
+- import_playbook: jumeaux.yml
+- import_playbook: miroir.yml
+- import_playbook: api.yml
+- import_playbook: tool.yml

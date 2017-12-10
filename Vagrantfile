@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   # provider
   config.vm.provider "virtualbox" do |vb|
     vb.cpus = 2 
-    vb.memory = "4096"
+    vb.memory = "2048"
   end
 
   # sync
@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
   # provisioning
   config.vm.provision "docker"
   config.vm.provision "ansible_local" do |ansible|
-    ansible.playbook = "ansible/playbook.yml"
+    ansible.playbook = "ansible/site.yml"
     # ansible.verbose = "-v"
   end
 end

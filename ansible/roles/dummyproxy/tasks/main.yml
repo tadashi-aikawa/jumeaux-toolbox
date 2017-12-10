@@ -1,0 +1,19 @@
+---
+- name: Create symlinks to nginx document root
+  become: yes
+  file:
+    src: '/jumeaux'
+    dest: '{{ document_root }}/api'
+    force: yes
+    state: link
+
+- name: Disable Sendfile
+  become: yes
+  lineinfile: 
+    dest: '/etc/nginx/nginx.conf'
+    regexp: '^\s*sendfile'
+    line: 'sendfile off;'
+    state: present
+  notify:
+    - Restart nginx
+

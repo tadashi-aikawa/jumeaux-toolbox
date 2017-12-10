@@ -1,0 +1,22 @@
+---
+- name: "[Miroir] Clone"
+  git:
+    repo: https://github.com/tadashi-aikawa/jumeaux-viewer.git
+    dest: /tmp/miroir/
+
+- name: "[Miroir] Create image"
+  become: yes
+  docker_image:
+    name: tadashi-aikawa/miroir
+    path: /tmp/miroir
+    dockerfile: Dockerfile.local.deploy
+
+- name: "[Miroir] Run container"
+  become: yes
+  docker_container:
+    name: miroir
+    image: tadashi-aikawa/miroir
+    ports:
+      - 8888:80
+    restart: yes
+    restart_policy: always

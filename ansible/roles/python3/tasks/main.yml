@@ -1,0 +1,9 @@
+---
+- name: "Check python3 already installed"
+  stat:
+    path: "~/.pyenv/versions/{{ version.python3 }}"
+  register: python3_installed
+
+- when: not python3_installed.stat.exists
+  name: Install python
+  shell: '. ~/.bash_profile && pyenv install {{ version.python3 }}'

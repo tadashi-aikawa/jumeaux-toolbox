@@ -1,0 +1,15 @@
+---
+- name: "Check Pip already installed"
+  stat:
+    path: /usr/bin/pip
+  register: pip_installed
+
+- when: not pip_installed.stat.exists
+  become: yes
+  block:
+    - name: Download install script for Pip
+      get_url:
+        url: https://bootstrap.pypa.io/get-pip.py
+        dest: /tmp/get-pip.py
+    - name: Install Pip
+      shell: python /tmp/get-pip.py

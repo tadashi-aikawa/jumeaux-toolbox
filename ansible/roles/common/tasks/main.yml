@@ -1,0 +1,18 @@
+---
+- name: Set timezone to {{ timezone }}
+  become: yes
+  file:
+    src: /usr/share/zoneinfo/{{ timezone }}
+    dest: /etc/localtime
+    state: link
+    force: true
+
+- name: Install common tools
+  become: yes
+  apt:
+    name: '{{ item }}'
+    state: latest
+  with_items:
+    - make
+    - wget
+    - curl

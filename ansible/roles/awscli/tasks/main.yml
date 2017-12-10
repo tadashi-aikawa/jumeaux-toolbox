@@ -1,0 +1,27 @@
+---
+- name: Install AWS CLI
+  become: yes
+  pip:
+    name: awscli
+
+- name: Create .aws directory
+  file:
+    path: ~/.aws
+    state: directory
+
+- name: Configure .aws/config
+  blockinfile:
+    path: ~/.aws/config
+    create: yes
+    block: |
+      [default]
+      region = ap-northeast-1
+
+- name: Configure .aws/credentials (dummy)
+  blockinfile:
+    path: ~/.aws/credentials
+    create: yes
+    block: |
+      [default]
+      aws_access_key_id = hoge
+      aws_secret_access_key = hoge
