@@ -1,5 +1,6 @@
 ---
-- name: LocalStack is running as container
+- name: "[LocalStack] Running as container"
+  become: yes
   docker_container:
     name: localstack
     image: localstack/localstack:{{ version.localstack }}
@@ -22,17 +23,8 @@
     restart: yes
     restart_policy: always
 
-- wait_for:
-    port: 4572
-    delay: 10
-
-- name: Create S3 bucket
-  command: aws --endpoint-url=http://localhost:4572 s3 mb s3://{{ miroir.bucket_name }}/
-
-- name: Create DynamoDB table
-  command: |
-    aws --endpoint-url=http://localhost:4569 dynamodb create-table \
-        --table-name {{ miroir.table_name }} \
-        --attribute-definitions AttributeName=hashkey,AttributeType=S \
-        --key-schema AttributeName=hashkey,KeyType=HASH \
-        --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1
+- name: "[LocalStack] Create bootstrap script"
+  template:
+    src: bootstrap.sh
+    dest: ~/
+    mode: "u=rwx,g=rx,o=rx"

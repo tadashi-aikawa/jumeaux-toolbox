@@ -14,7 +14,9 @@ Vagrant.configure("2") do |config|
   # provider
   config.vm.provider "virtualbox" do |vb|
     vb.cpus = 2 
-    vb.memory = "2048"
+    vb.memory = "4096"
+    # Once built Miroir image, 2048MB is too enough.
+    # vb.memory = "2048"
   end
 
   # sync
@@ -26,5 +28,6 @@ Vagrant.configure("2") do |config|
     ansible.playbook = "ansible/site.yml"
     # ansible.verbose = "-v"
   end
+  config.vm.provision "shell", run: "always", inline: "/home/vagrant/bootstrap.sh"
 end
 
