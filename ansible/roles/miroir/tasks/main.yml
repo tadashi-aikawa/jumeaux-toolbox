@@ -1,22 +1,24 @@
 ---
-- name: "[Miroir] Clone"
-  git:
-    repo: https://github.com/tadashi-aikawa/jumeaux-viewer.git
-    dest: /tmp/miroir/
+- name: "[Miroir] Check already installed"
+  stat:
+    path: /opt/miroir/{{ version.miroir }}
+  register: miroir_installed
 
-- name: "[Miroir] Create image"
+- when: not miroir_installed.stat.exists
   become: yes
-  docker_image:
-    name: tadashi-aikawa/miroir
-    path: /tmp/miroir
-    dockerfile: Dockerfile.local.deploy
+  block:
+    - name: "[Miroir] Clone"
+      git:
+        repo: https://github.com/tadashi-aikawa/miroir.git
+        dest: /opt/miroir/{{ version.miroir }}
+        version: "{{ version.miroir }}"
+        depth: 1
 
-- name: "[Miroir] Run container"
-  become: yes
-  docker_container:
-    name: miroir
-    image: tadashi-aikawa/miroir
-    ports:
-      - 8888:80
-    restart: yes
-    restart_policy: always
+    - name: "[Miroir] Build and deploy"
+      make:
+        chdir: /opt/miroir/{{ version.miroir }}
+        target: "{{ item }}"
+      items:
+        - init
+        - package
+        - deploy-container

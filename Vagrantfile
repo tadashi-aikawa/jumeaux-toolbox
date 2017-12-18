@@ -13,10 +13,11 @@ Vagrant.configure("2") do |config|
 
   # provider
   config.vm.provider "virtualbox" do |vb|
-    vb.cpus = 2 
+    vb.cpus = 4 
     vb.memory = "4096"
-    # Once built Miroir image, 2048MB is too enough.
-    # vb.memory = "2048"
+    # Once built Miroir image, 4CPU and 2048MB are too enough.
+    #vb.cpus = 2 
+    #vb.memory = "2048"
   end
 
   # sync

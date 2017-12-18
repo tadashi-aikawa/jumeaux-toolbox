@@ -4,7 +4,7 @@ Jumeaux Toolbox
 Jumeaux Toolbox provides you local environments which includes
 
 * [Jumeaux](https://github.com/tadashi-aikawa/jumeaux)
-* [Jumeaux Viewer](https://github.com/tadashi-aikawa/jumeaux-viewer)
+* [Miroir](https://github.com/tadashi-aikawa/miroir)
 * [Storage](https://github.com/localstack/localstack) (AWS emulates by Localstack)
 * Dummy API server (can control responsies you want)
 
@@ -13,7 +13,7 @@ Jumeaux Toolbox provides you local environments which includes
 
 ## System structure
 
-### Original (Jumeaux and Jumeaux Viewer)
+### Original (Jumeaux and Miroir)
 
 [![](https://cacoo.com/diagrams/lhxa5WXGey4z5MMD-DD644.png)](https://cacoo.com/diagrams/lhxa5WXGey4z5MMD#DD644)
 
