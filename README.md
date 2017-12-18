@@ -44,9 +44,9 @@ $ vagrant up --provision
 ```
 
 
-## Miroir (Jumeaux Viewer)
+## Miroir
 
-You can access to http://localhost:8888 and login with LocalStack mode on.
+You can access to http://localhost:8888/miroir and login with LocalStack mode on.
 
 After login successed, you need to input configurations as following.
 
